@@ -10,7 +10,7 @@ public class main {
 
     public void menuOpciones() {
         int opcion = 0;
-        while (opcion != 7) {
+        while (opcion != 10) {
             System.out.println("********************************************");
             System.out.println("Sea bienvenido/a al Conversor de Moneda =]");
             System.out.println("1) Dólar => Peso Argentino");
@@ -19,16 +19,19 @@ public class main {
             System.out.println("4) Real brasileño => Dólar");
             System.out.println("5) Dólar => Peso colombiano");
             System.out.println("6) Peso colombiano => Dólar");
-            System.out.println("7) Salir");
+            System.out.println("7) Sol peruano => Mexicano");
+            System.out.println("8) Peso chileno => Sol peruano");
+            System.out.println("9) Dram armenio => Sol peruano");
+            System.out.println("10) Salir");
             System.out.print("Ingrese su opción: ");
             
             try {
                 opcion = consola.nextInt();
-                if (opcion >= 1 && opcion <= 6) {
+                if (opcion >= 1 && opcion <= 9) {
                     System.out.print("Ingrese el valor que desea convertir: ");
                     double cantidad = consola.nextDouble();
                     realizarConversion(opcion, cantidad);
-                } else if (opcion == 7) {
+                } else if (opcion == 10) {
                     System.out.println("Saliendo del programa. ¡Gracias por usar el conversor!");
                 } else {
                     System.out.println("Por favor, elija una opción válida.");
@@ -66,6 +69,18 @@ public class main {
             case 6 -> {
                 monedaOrigen = "COP";
                 monedaDestino = "USD";
+            }
+            case 7 -> {
+                monedaOrigen = "PEN";
+                monedaDestino = "MXN";
+            }
+            case 8 -> {
+                monedaOrigen = "CLP";
+                monedaDestino = "PEN";
+            }
+            case 9 -> {
+                monedaOrigen = "AMD";
+                monedaDestino = "PEN";
             }
         }
 
